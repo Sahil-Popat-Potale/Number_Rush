@@ -1,22 +1,20 @@
 package com.sahilpopat.number_rush;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    TextView instructionText;
-    GridLayout gridLayout;
-    private int currentNumber = 1;
-    //TODO: not working
+    TextView lv1, lv2 , lv3, lv4, lv5;
+    CardView level1, level2, level3, level4, level5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,42 +26,30 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        instructionText = findViewById(R.id.instructionText);
-        gridLayout = findViewById(R.id.gridLayout);
+        level1 = findViewById(R.id.level1);
+        lv1 = findViewById(R.id.lv1);
+        level2 = findViewById(R.id.level2);
+        lv2 = findViewById(R.id.lv2);
+        level3 = findViewById(R.id.level3);
+        lv3 = findViewById(R.id.lv3);
+        level4 = findViewById(R.id.level4);
+        lv4 = findViewById(R.id.lv4);
+        level5 = findViewById(R.id.level5);
+        lv5 = findViewById(R.id.lv5);
 
-        setButtonListeners();
+        level1.setOnClickListener(v -> startLevelActivity(1));
+        lv1.setOnClickListener(v -> startLevelActivity(1));
+        level2.setOnClickListener(v -> startLevelActivity(2));
+        lv2.setOnClickListener(v -> startLevelActivity(2));
+        level3.setOnClickListener(v -> startLevelActivity(3));
+        lv3.setOnClickListener(v -> startLevelActivity(3));
+        level4.setOnClickListener(v -> startLevelActivity(4));
+        lv4.setOnClickListener(v -> startLevelActivity(4));
     }
 
-    private void setButtonListeners() {
-        for (int i = 1; i <= 10; i++) {
-            String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = findViewById(resID);
-            button.setOnClickListener(v -> onNumberClick(Integer.parseInt(button.getText().toString()), button));
-        }
-    }
-
-    private void onNumberClick(int number, Button button) {
-        if (number == currentNumber) {
-            button.setEnabled(false);
-            currentNumber++;
-            if (currentNumber > 10) {
-                Toast.makeText(this, "You Win!", Toast.LENGTH_SHORT).show();
-                resetGame();
-            }
-        } else {
-            Toast.makeText(this, "Wrong number! You Lose!", Toast.LENGTH_SHORT).show();
-            resetGame();
-        }
-    }
-
-    private void resetGame() {
-        currentNumber = 1;
-        for (int i = 1; i <= 10; i++) {
-            String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = findViewById(resID);
-            button.setEnabled(true);
-        }
+    private void startLevelActivity(int level) {
+        Intent intent = new Intent(MainActivity.this, LevelsActivity.class);
+        intent.putExtra(LevelsActivity.EXTRA_LEVEL, level);
+        startActivity(intent);
     }
 }

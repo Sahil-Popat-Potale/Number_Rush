@@ -3,6 +3,11 @@
 
     <!-- Text View -->
     <string name="click_number">Click the numbers in sequence!</string>
+    <string name="lv1">Level 1</string>
+    <string name="lv2">Level 2</string>
+    <string name="lv3">Level 3</string>
+    <string name="lv4">Level 4</string>
+    <string name="lv5">Level 5</string>
 
     <!-- Button Text -->
     <string name="btn1">1</string>
