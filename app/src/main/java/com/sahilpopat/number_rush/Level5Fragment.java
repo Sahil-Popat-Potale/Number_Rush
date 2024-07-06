@@ -1,7 +1,6 @@
 package com.sahilpopat.number_rush;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -24,7 +23,7 @@ public class Level5Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_level4, container, false);
+        View view=inflater.inflate(R.layout.fragment_level5, container, false);
         instructionText = view.findViewById(R.id.instructionText);
         gridLayout = view.findViewById(R.id.gridLayout);
 
@@ -36,7 +35,7 @@ public class Level5Fragment extends Fragment {
     private void setButtonListeners(View view) {
         for (int i = 1; i <= 10; i++) {
             String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
+            int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
             Button button = view.findViewById(resID);
             button.setOnClickListener(v -> onNumberClick(Integer.parseInt(button.getText().toString()), button));
         }
@@ -60,8 +59,8 @@ public class Level5Fragment extends Fragment {
         currentNumber = 1;
         for (int i = 1; i <= 10; i++) {
             String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
-            Button button = getView().findViewById(resID);
+            int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
+            Button button = requireView().findViewById(resID);
             button.setEnabled(true);
         }
     }

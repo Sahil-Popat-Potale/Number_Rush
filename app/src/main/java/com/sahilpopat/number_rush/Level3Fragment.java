@@ -36,7 +36,7 @@ public class Level3Fragment extends Fragment {
     private void setButtonListeners(View view) {
         for (int i = 1; i <= 10; i++) {
             String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
+            int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
             Button button = view.findViewById(resID);
             button.setOnClickListener(v -> onNumberClick(Integer.parseInt(button.getText().toString()), button));
         }
@@ -60,8 +60,8 @@ public class Level3Fragment extends Fragment {
         currentNumber = 1;
         for (int i = 1; i <= 10; i++) {
             String buttonID = "btn" + i;
-            int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
-            Button button = getView().findViewById(resID);
+            int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
+            Button button = requireView().findViewById(resID);
             button.setEnabled(true);
         }
     }
