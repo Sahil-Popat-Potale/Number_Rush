@@ -49,6 +49,8 @@ public class Level4Fragment extends Fragment {
             if (currentNumber > 10) {
                 Toast.makeText(getActivity(), "You Win!", Toast.LENGTH_SHORT).show();
                 resetGame();
+                //take user to next level
+                ((LevelsActivity) requireActivity()).loadLevelFragment(5);
             }
         } else {
             Toast.makeText(getActivity(), "Wrong number! You Lose!", Toast.LENGTH_SHORT).show();

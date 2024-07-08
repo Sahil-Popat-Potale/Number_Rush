@@ -30,7 +30,7 @@ public class LevelsActivity extends AppCompatActivity {
         loadLevelFragment(level);
     }
 
-    private void loadLevelFragment(int level) {
+     public void loadLevelFragment(int level) {
         Fragment fragment = null;
 
         switch (level) {
