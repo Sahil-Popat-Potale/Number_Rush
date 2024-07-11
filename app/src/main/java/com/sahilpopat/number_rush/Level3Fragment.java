@@ -50,7 +50,7 @@ public class Level3Fragment extends Fragment {
                 Toast.makeText(getActivity(), "You Win!", Toast.LENGTH_SHORT).show();
                 resetGame();
                 //take user to next level
-                ((LevelsActivity) requireActivity()).loadLevelFragment(4);
+                ((LevelsActivity) requireActivity()).delayFragment(4);
             }
         } else {
             Toast.makeText(getActivity(), "Wrong number! You Lose!", Toast.LENGTH_SHORT).show();

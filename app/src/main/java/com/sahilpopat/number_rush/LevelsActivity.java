@@ -1,6 +1,7 @@
 package com.sahilpopat.number_rush;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class LevelsActivity extends AppCompatActivity {
     public static final String EXTRA_LEVEL = "extra_level";
+    public static final int DELAY_MILLIS = 800; // 0.8 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,14 @@ public class LevelsActivity extends AppCompatActivity {
         });
 
         int level = getIntent().getIntExtra(EXTRA_LEVEL, 1);
-        loadLevelFragment(level);
+        delayFragment(level);
     }
 
-     public void loadLevelFragment(int level) {
+    public void delayFragment(int level){
+        new Handler().postDelayed(() -> loadLevelFragment(level), DELAY_MILLIS);
+    }
+
+    public void loadLevelFragment(int level) {
         Fragment fragment = null;
 
         switch (level) {
@@ -55,6 +61,9 @@ public class LevelsActivity extends AppCompatActivity {
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(
+                R.anim.enter_bottom, R.anim.exit_top,
+                R.anim.enter_right, R.anim.exit_left);
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
     }
