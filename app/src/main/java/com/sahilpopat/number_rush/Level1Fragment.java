@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
@@ -38,7 +40,10 @@ public class Level1Fragment extends Fragment {
             String buttonID = "btn" + i;
             int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
             Button button = view.findViewById(resID);
-            button.setOnClickListener(v -> onNumberClick(Integer.parseInt(button.getText().toString()), button));
+            button.setOnClickListener(v -> {
+                onNumberClick(Integer.parseInt(button.getText().toString()), button);
+                animateButton(button);
+            });
         }
     }
 
@@ -56,6 +61,11 @@ public class Level1Fragment extends Fragment {
             Toast.makeText(getActivity(), "Wrong number! You Lose!", Toast.LENGTH_SHORT).show();
             resetGame();
         }
+    }
+
+    private void animateButton(Button button) { // Animation here
+        Animation animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.btn_pop);
+        button.startAnimation(animation);
     }
 
     private void resetGame() {
