@@ -14,10 +14,15 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Level3Fragment extends Fragment {
     TextView instructionText;
     GridLayout gridLayout;
     private int currentNumber = 1;
+    // Using a map to store original button text
+    private final Map<Integer, String> originalBtnTxt = new HashMap<>();
 
     public Level3Fragment() { // Required empty public constructor
     }
@@ -31,8 +36,18 @@ public class Level3Fragment extends Fragment {
         instructionText = view.findViewById(R.id.instructionText);
         gridLayout = view.findViewById(R.id.gridLayout);
 
+        storeBtnTxt(view);
         setButtonListeners(view);
         return view;
+    }
+
+    private void storeBtnTxt(View view) { // Store original button text
+        for (int i = 1; i <= 10; i++) {
+            String buttonID = "btn" + i;
+            int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
+            Button button = view.findViewById(resID);
+            originalBtnTxt.put(resID, button.getText().toString());
+        }
     }
 
     private void setButtonListeners(View view) {
@@ -50,6 +65,7 @@ public class Level3Fragment extends Fragment {
     private void onNumberClick(int number, Button button) {
         if (number == currentNumber) {
             button.setEnabled(false);
+            button.setText("");
             currentNumber++;
             if (currentNumber > 10) {
                 Toast.makeText(getActivity(), "You Win!", Toast.LENGTH_SHORT).show();
@@ -75,6 +91,7 @@ public class Level3Fragment extends Fragment {
             int resID = getResources().getIdentifier(buttonID, "id", requireActivity().getPackageName());
             Button button = requireView().findViewById(resID);
             button.setEnabled(true);
+            button.setText(originalBtnTxt.get(resID)); // Reset button text
         }
     }
 }
