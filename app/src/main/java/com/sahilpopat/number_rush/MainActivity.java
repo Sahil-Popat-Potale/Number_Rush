@@ -12,8 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    TextView lv1, lv2 , lv3, lv4, lv5;
-    CardView level1, level2, level3, level4, level5;
+    TextView lv1, lv2 , lv3, lv4, lv5, lv6, lv7 , lv8, lv9, lv10;
+    CardView level1, level2, level3, level4, level5, level6, level7, level8, level9, level10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
         lv4 = findViewById(R.id.lv4);
         level5 = findViewById(R.id.level5);
         lv5 = findViewById(R.id.lv5);
+        level6 = findViewById(R.id.level6);
+        lv6 = findViewById(R.id.lv6);
+        level7 = findViewById(R.id.level7);
+        lv7 = findViewById(R.id.lv7);
+        level8 = findViewById(R.id.level8);
+        lv8 = findViewById(R.id.lv8);
+        level9 = findViewById(R.id.level9);
+        lv9 = findViewById(R.id.lv9);
+        level10 = findViewById(R.id.level10);
+        lv10 = findViewById(R.id.lv10);
 
         level1.setOnClickListener(v -> startLevelActivity(1));
         lv1.setOnClickListener(v -> startLevelActivity(1));
@@ -47,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
         lv4.setOnClickListener(v -> startLevelActivity(4));
         level5.setOnClickListener(v -> startLevelActivity(5));
         lv5.setOnClickListener(v -> startLevelActivity(5));
+        level6.setOnClickListener(v -> startLevelActivity(6));
+        lv6.setOnClickListener(v -> startLevelActivity(6));
+        level7.setOnClickListener(v -> startLevelActivity(7));
+        lv7.setOnClickListener(v -> startLevelActivity(7));
+        level8.setOnClickListener(v -> startLevelActivity(8));
+        lv8.setOnClickListener(v -> startLevelActivity(8));
+        level9.setOnClickListener(v -> startLevelActivity(9));
+        lv9.setOnClickListener(v -> startLevelActivity(9));
+        level10.setOnClickListener(v -> startLevelActivity(10));
     }
 
     private void startLevelActivity(int level) {
