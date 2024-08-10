@@ -55,12 +55,28 @@ public class LevelsActivity extends AppCompatActivity {
             case 5:
                 fragment = new Level5Fragment();
                 break;
+            case 6:
+                fragment = new Level6Fragment();
+                break;
+            case 7:
+                fragment = new Level7Fragment();
+                break;
+            case 8:
+                fragment = new Level8Fragment();
+                break;
+            case 9:
+                fragment = new Level9Fragment();
+                break;
+            case 10:
+                fragment = new Level10Fragment();
+                break;
             default:
-                Toast.makeText(this, "Invalid level", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Level Not Ready yet", Toast.LENGTH_SHORT).show();
                 return;
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //fragmentTransaction.addToBackStack(fragmentManager.getFragments().toString());
         fragmentTransaction.setCustomAnimations(
                 R.anim.enter_bottom, R.anim.exit_top,
                 R.anim.enter_right, R.anim.exit_left);
