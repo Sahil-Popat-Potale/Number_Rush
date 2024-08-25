@@ -190,8 +190,6 @@
                     android:text="@string/lv10"
                     android:textSize="18sp" />
             </androidx.cardview.widget.CardView>
-
-
         </LinearLayout>
     </ScrollView>
 
