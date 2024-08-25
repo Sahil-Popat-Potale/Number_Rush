@@ -17,21 +17,21 @@ import android.widget.Toast;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Level5Fragment extends Fragment {
+public class Level7Fragment extends Fragment {
     TextView instructionText;
     GridLayout gridLayout;
     private int currentNumber = 1;
     // Using a map to store original button text
     private final Map<Integer, String> originalBtnTxt = new HashMap<>();
 
-    public Level5Fragment() { // Required empty public constructor
+    public Level7Fragment() { // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_level5, container, false);
+        View view = inflater.inflate(R.layout.fragment_level7, container, false);
 
         instructionText = view.findViewById(R.id.instructionText);
         gridLayout = view.findViewById(R.id.gridLayout);
@@ -71,7 +71,7 @@ public class Level5Fragment extends Fragment {
                 Toast.makeText(getActivity(), "You Win!", Toast.LENGTH_SHORT).show();
                 resetGame();
                 //take user to next level
-                ((LevelsActivity) requireActivity()).delayFragment(6);
+                ((LevelsActivity) requireActivity()).delayFragment(8);
             }
         } else {
             Toast.makeText(getActivity(), "Wrong number! You Lose!", Toast.LENGTH_SHORT).show();
