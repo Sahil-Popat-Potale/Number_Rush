@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -44,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -52,6 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="@color/cardColor"
                     android:text="@string/lv2"
                     android:textSize="18sp" />
             </androidx.cardview.widget.CardView>
@@ -60,6 +63,7 @@
                 android:id="@+id/level3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -78,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -95,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -111,6 +117,7 @@
                 android:id="@+id/level6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -129,6 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -145,6 +153,7 @@
                 android:id="@+id/level8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -163,6 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -180,6 +190,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/cardColor"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -201,6 +212,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
+        android:background="@color/cardColor"
         android:textSize="18sp"
         android:text="@string/click_number" />
 
