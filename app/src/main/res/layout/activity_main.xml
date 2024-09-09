@@ -210,9 +210,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:padding="14dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/cardColor"
+        android:background="@drawable/button_tile"
         android:textSize="18sp"
         android:text="@string/click_number" />
 
