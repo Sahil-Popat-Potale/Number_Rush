@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         lv7.setOnClickListener(v -> startLevelActivity(7));
         lv8.setOnClickListener(v -> startLevelActivity(8));
         lv9.setOnClickListener(v -> startLevelActivity(9));
+        lv9.setOnClickListener(v -> startLevelActivity(10));
     }
 
     private void startLevelActivity(int level) {
